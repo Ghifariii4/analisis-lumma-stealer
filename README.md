@@ -1,5 +1,5 @@
 # Bedah Alur Serangan Lumma Stealer Menggunakan Cyber Kill Chain
-Halo! Di sini saya mau sharing hasil analisis saya tentang salah satu malware yang lagi sering banget dibahas di forum cyber security, yaitu **Lumma Stealer**. Sebagai anak RPL, saya cukup penasaran gimana cara kerja 'Barang' ini sampai bisa menembus pertahanan sistem dengan cara yang cukup unik.
+Halo! Di sini saya mau sharing hasil analisis saya tentang salah satu malware yang lagi sering banget dibahas di forum cyber security, yaitu **Lumma Stealer**. Sebagai anak jurusan RPL, saya cukup penasaran gimana cara kerja 'Barang' ini sampai bisa menembus pertahanan sistem dengan cara yang cukup unik.
 
 ---
 
@@ -9,7 +9,7 @@ Singkatnya, Lumma Stealer (alias LummaC2 Stealer) adalah malware jenis *Informat
 ## Modus Baru: Fake CHAPTCHA (Social Engineering)
 Yang membuat saya tertarik adalah cara penyebarannya. Mereka tidak menggunakan *exploit* yang rumit, tetapi menggunakan trik **Fake CHAPCTHA**.
 
-Jadi, penyerang biasanya mengirim notifikasi atau komentar di repositori GitHub, seolah-olah memberitahu ada kerentanan keamanan (*security vulnerability*). Korban yang panik atau penasaran bakal didesak buat klik tautan mencurigakan yang sudah disiapkan.
+Jadi, penyerang biasanya mengirim notifikasi atau komentar di repositori GitHub (bisa juga lewat media sosial, iklan atau software bajakan), seolah-olah memberitahu ada kerentanan keamanan (*security vulnerability*). Korban yang panik atau penasaran bakal didesak buat klik tautan mencurigakan yang sudah disiapkan.
 
 Setelah klik link itu, korban nggak langsung kena malware. Mereka bakal dihadapkan sama halaman **CAPTCHA palsu** yang kelihatan sangat profesional. Di situ, korban diminta menyalin sebuah script dan menjalankannya lewat fungsi `WIN + R` (Run) dengan alasan "verifikasi keamanan".
 
@@ -27,6 +27,12 @@ Saya mencoba melihat alur serangannnya dengan menggunakan framework **Cyber Kill
 
 2. **Weaponization (Persenjataan):**
    Penyerang sudah menyiapkan sebuah website dummy atau palsu yang tampilannya sangat mirip dengan website CloudFlare. Di balik tombol "Verify", mereka menyembunyikan script PowerShell yang sudah di acak (*obfuscated*) agar tidak terbaca oleh antivirus biasa.
+
+<p align="center">
+  <img src="https://cybelangel.com/wp-content/uploads/2025/10/lumma_stealer_infostealers.png" alt="Alur Serangan Lumma Stealer" width="600">
+  <br>
+  <em>Gambar: Fake CAPTCHA page in action. (Source: Microsoft)</em>
+</p>
 
 3. **Delivery (Pengiriman):**
    Begitu kita buka webnya, script tadi otomatis masuk ke *clipboard* kita. Lewat bantuan instruksi palsu di layar, penyerang "mengirim" perintah itu agar kita menjalankan sendiri secara manual.

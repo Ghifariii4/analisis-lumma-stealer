@@ -6,8 +6,8 @@ Halo! Di sini saya mau sharing hasil analisis saya tentang salah satu malware ya
 ## Apa itu Lumma Stealer?
 Singkatnya, Lumma Stealer (alias LummaC2 Stealer) adalah malware jenis *Information Stealer* yang pertama kali muncul pada tahun 2022 di sebuah forum berbahasa Rusia yang beroperasi dengan model Malware-as-a-Service (MaaS). Ditulis menggunakan bahasa C, oleh karena itu ukurannya cukup kecil tetapi sangat cepat saat mencuri informasi sensitif, seperti data login, informasi kartu kredit, data akun bank, dan bahkan informasi terkait kripto.
 
-## Modus Baru: Fake CHAPTCHA (Social Engineering)
-Yang membuat saya tertarik adalah cara penyebarannya. Mereka tidak menggunakan *exploit* yang rumit, tetapi menggunakan trik **Fake CHAPCTHA**.
+## Modus Baru: Fake CAPTCHA (Social Engineering)
+Yang membuat saya tertarik adalah cara penyebarannya. Mereka tidak menggunakan *exploit* yang rumit, tetapi menggunakan trik **Fake CAPTCHA**.
 
 Jadi, penyerang biasanya mengirim notifikasi atau komentar di repositori GitHub (bisa juga lewat media sosial, iklan atau software bajakan), seolah-olah memberitahu ada kerentanan keamanan (*security vulnerability*). Korban yang panik atau penasaran bakal didesak buat klik tautan mencurigakan yang sudah disiapkan.
 
